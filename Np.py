@@ -1,9 +1,6 @@
-from selenium import webdriver
 import bs4
 import requests
 import pyttsx3
-from tkinter import *
-import threading
 
 #setting voice engine properties
 engine=pyttsx3.init()
