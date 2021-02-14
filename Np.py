@@ -6,7 +6,7 @@ import pyttsx3
 engine=pyttsx3.init()
 engine.setProperty('rate', 160)#the speed at which the engine speaks
 voices=engine.getProperty('voices')
-engine.setProperty('voice', voices[20].id)#can change the id according to your own choice
+engine.setProperty('voice', voices[2].id)#can change the id according to your own choice
 
 #opening the site through which news is gathered
 response = requests.get('https://inshorts.com/en/read')
@@ -39,10 +39,10 @@ engine.say('hello there! Good morning. The following are the headlines for today
 engine.runAndWait()
 for x in range(len(news_title)):
 
-    engine.setProperty('voice', voices[20].id)
+    engine.setProperty('voice', voices[2].id)
     engine.say(news_title[x])
 
-    engine.setProperty('voice', voices[2].id)
+    engine.setProperty('voice', voices[1].id)
     engine.setProperty('rate', 180)
     engine.say(news_article[x])
     engine.runAndWait()
