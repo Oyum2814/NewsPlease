@@ -1,6 +1,7 @@
 import bs4
 import requests
 import pyttsx3
+from os import system
 
 #setting voice engine properties
 engine=pyttsx3.init()
@@ -39,10 +40,13 @@ engine.say('hello there! Good morning. The following are the headlines for today
 engine.runAndWait()
 for x in range(len(news_title)):
 
-    engine.setProperty('voice', voices[2].id)
-    engine.say(news_title[x])
-
     engine.setProperty('voice', voices[1].id)
+    engine.say(news_title[x])
+    print(news_title[x]+"\n\n")
+
+    engine.setProperty('voice', voices[2].id)
     engine.setProperty('rate', 180)
     engine.say(news_article[x])
+    print(news_article[x])
     engine.runAndWait()
+    _ = system('clear')
