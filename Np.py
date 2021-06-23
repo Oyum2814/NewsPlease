@@ -3,6 +3,9 @@ import requests
 import pyttsx3
 from os import system
 
+
+#perfect example of web scraping using requests
+
 #setting voice engine properties
 engine=pyttsx3.init()
 engine.setProperty('rate', 160)#the speed at which the engine speaks
@@ -23,7 +26,7 @@ for title in titles:
         title = str(title)
         x = title.find('<span itemprop="headline">')
         y = title.find('</span>', x)
-        news_title.append(title[x + 26:y])
+        news_title.append(title[x + 26:y])           #Each and every news title gets added (appended) to the list news_article
 
     #News article
 
@@ -31,7 +34,7 @@ for title in titles:
         title = str(title)
         x = title.find('<div itemprop="articleBody">')
         y = title.find('</div>', x)
-        news_article.append(title[x + 28:y])
+        news_article.append(title[x + 28:y])        #Each and every news gets added (appended) to the list news_article
 
 
 # Speaking the headlines and articles
